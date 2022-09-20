@@ -1,0 +1,18 @@
+{
+  "name": "light/model",
+  "authors": [
+    {
+      "name": "Edward Komissarov",
+      "email": "execrot@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.1",
+    "ext-mongodb": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Light\\Model\\": "src/"
+    }
+  }
+}
