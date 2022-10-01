@@ -88,7 +88,7 @@ class Driver extends Model\Driver\DriverAbstract
   {
     foreach ($data as $name => $value) {
 
-      if ($value instanceof Model) {
+      if ($value instanceof Model\Model) {
         $data[$name] = $value->{$value->getMeta()->getPrimary()};
       }
 
@@ -383,11 +383,7 @@ class Driver extends Model\Driver\DriverAbstract
 
     $bulk->update(
       $cond,
-      [
-        '$set' => $this->_normalizeDataTypes(
-          $model->getData()
-        )
-      ],
+      ['$set' => $this->_normalizeDataTypes($model->getData())],
       ['multi' => true]
     );
 

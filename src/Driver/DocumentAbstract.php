@@ -111,7 +111,7 @@ abstract class DocumentAbstract implements ArrayAccess
     if (
       substr($property->getType(), -2) === '[]'
       && class_exists(substr($property->getType(), 0, -2), true)
-      && is_subclass_of(substr($property->getType(), 0, -2), '\\Light\\Model')
+      && is_subclass_of(substr($property->getType(), 0, -2), '\\Light\\Model\\Model')
     ) {
       if (is_array($value)) {
 
@@ -168,7 +168,7 @@ abstract class DocumentAbstract implements ArrayAccess
 
     if (
       class_exists($property->getType(), true)
-      && is_subclass_of($property->getType(), '\\Light\\Model')
+      && is_subclass_of($property->getType(), '\\Light\\Model\\Model')
     ) {
       if (is_string($value)) {
 
